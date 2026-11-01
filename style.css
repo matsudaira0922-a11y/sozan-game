@@ -1,0 +1,54 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;color:#f3ead8;
+ font-family:"Noto Serif CJK JP","Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+ -webkit-user-select:none;user-select:none;touch-action:none}
+#c{position:fixed;inset:0;width:100%;height:100%;display:block}
+.hidden{display:none!important}
+#loading{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:50;
+ background:radial-gradient(ellipse at 50% 70%,#3a1a10 0%,#120a12 45%,#05050a 100%)}
+.ld-inner{text-align:center;padding:24px;max-width:720px}
+.ld-sub{letter-spacing:.5em;font-size:14px;color:#c9a874;margin-bottom:14px}
+#loading h1{font-size:clamp(44px,9vw,88px);letter-spacing:.25em;font-weight:700;color:#f6e6c4;
+ text-shadow:0 0 30px rgba(255,120,40,.55),0 0 2px #fff}
+.ld-bar{width:min(420px,80vw);height:4px;background:#2a2230;margin:34px auto 12px;border-radius:2px;overflow:hidden}
+#ld-fill{height:100%;width:0;background:linear-gradient(90deg,#7ab8ff,#ffb060)}
+#ld-text{font-size:14px;color:#bba}
+#start-btn{margin-top:26px;font:inherit;font-size:22px;letter-spacing:.3em;padding:12px 40px;color:#fff;
+ background:rgba(255,140,60,.18);border:1px solid #e9a060;border-radius:4px;cursor:pointer}
+#start-btn:hover{background:rgba(255,140,60,.35)}
+.ld-help{margin-top:26px;font-size:13px;color:#9a93a0;line-height:1.8}
+body.touch .ld-help .pc{display:none} body:not(.touch) .ld-help .touch{display:none}
+#hud{position:fixed;inset:0;pointer-events:none;z-index:10}
+#objective{position:absolute;left:16px;top:14px;background:rgba(10,8,14,.55);padding:8px 14px;border-left:3px solid #e9a060;font-size:15px;max-width:60vw}
+#objective .lbl{color:#e9a060;margin-right:10px;font-size:13px}
+#topright{position:absolute;right:14px;top:12px;display:flex;gap:8px;align-items:center}
+#topright>div{background:rgba(10,8,14,.55);padding:7px 12px;font-size:14px;border-radius:3px}
+#found b{color:#ffcf7a}
+#topright button{pointer-events:auto;font-size:18px;width:40px;height:36px;border:1px solid rgba(255,255,255,.25);
+ background:rgba(10,8,14,.55);color:#fff;border-radius:3px;cursor:pointer}
+#topright button.on{background:rgba(255,150,60,.45)}
+#prompt{position:absolute;left:50%;top:62%;transform:translateX(-50%);background:rgba(10,8,14,.7);padding:6px 16px;border:1px solid #e9a060;border-radius:3px;font-size:16px}
+#caption{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);width:min(820px,92vw);text-align:center;
+ text-shadow:0 2px 6px #000,0 0 14px #000;transition:opacity .8s;opacity:0}
+#caption.show{opacity:1}
+#cap-title{font-size:clamp(20px,3vw,30px);letter-spacing:.2em;color:#ffd9a0;margin-bottom:6px}
+#cap-text{font-size:clamp(14px,2vw,18px);line-height:1.8}
+#dialog{position:absolute;left:50%;bottom:5%;transform:translateX(-50%);width:min(760px,94vw);background:rgba(12,9,16,.82);
+ border:1px solid rgba(233,160,96,.6);border-radius:6px;padding:14px 20px 26px;pointer-events:auto;cursor:pointer}
+#dlg-name{color:#e9a060;font-size:15px;margin-bottom:6px}
+#dlg-text{font-size:clamp(15px,2.2vw,19px);line-height:1.8}
+#dlg-next{position:absolute;right:14px;bottom:6px;font-size:12px;color:#aaa}
+#toast{position:absolute;left:50%;top:18%;transform:translateX(-50%);background:rgba(10,8,14,.7);padding:8px 18px;border-radius:3px;font-size:16px;color:#ffe0a8}
+#flash{position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(ellipse at center,rgba(255,140,40,0) 40%,rgba(255,60,10,.55) 100%)}
+#touch-ui{position:absolute;inset:0}
+#joy{position:absolute;left:28px;bottom:28px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.25);pointer-events:auto}
+#joy-knob{position:absolute;left:40px;top:40px;width:50px;height:50px;border-radius:50%;background:rgba(255,220,180,.45)}
+#tbtns{position:absolute;right:20px;bottom:30px;display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+#tbtns button{pointer-events:auto;font:inherit;font-size:16px;width:86px;height:56px;border-radius:28px;border:1px solid rgba(255,255,255,.35);background:rgba(10,8,14,.5);color:#fff}
+#tbtns button.on{background:rgba(255,150,60,.5)}
+#ending{position:fixed;inset:0;z-index:40;display:flex;align-items:center;justify-content:center;background:rgba(5,4,8,.72);animation:fadein 2.5s}
+.end-inner{max-width:720px;padding:30px;text-align:center}
+.end-inner h2{font-size:clamp(26px,4vw,40px);letter-spacing:.3em;color:#ffd9a0;margin-bottom:22px}
+.end-inner p{font-size:clamp(15px,2.2vw,19px);line-height:2.1;white-space:pre-line}
+#end-btn{margin-top:26px;font:inherit;font-size:18px;padding:10px 30px;color:#fff;background:rgba(255,140,60,.2);border:1px solid #e9a060;border-radius:4px;cursor:pointer}
+@keyframes fadein{from{opacity:0}to{opacity:1}}

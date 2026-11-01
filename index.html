@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>永劫の双山 — Eternal Twin Peaks</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{ "imports": { "three": "./lib/three.module.min.js" } }</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="loading">
+  <div class="ld-inner">
+    <div class="ld-sub">落ち続ける星の物語</div>
+    <h1>永劫の双山</h1>
+    <div class="ld-bar"><div id="ld-fill"></div></div>
+    <div id="ld-text">世界を生成しています…</div>
+    <button id="start-btn" class="hidden">はじめる</button>
+    <div class="ld-help">
+      <div class="pc">WASD / 矢印：移動　マウス：視点（クリックで固定）　Shift：走る　Space：ジャンプ　E：話す　T：時間を早送り　M：音のオン/オフ</div>
+      <div class="touch">左下のスティック：移動　画面をドラッグ：視点　右下のボタン：ジャンプ・走る・話す</div>
+    </div>
+  </div>
+</div>
+
+<div id="hud" class="hidden">
+  <div id="objective"><span class="lbl">目標</span><span id="obj-text">エルリックおじいちゃんと話そう</span></div>
+  <div id="topright">
+    <div id="found">発見 <b id="found-n">0</b>/<span id="found-total">0</span></div>
+    <div id="tod">夜明け</div>
+    <button id="btn-time" title="時間を早送り (T)">⏩</button>
+    <button id="btn-mute" title="音のオン/オフ (M)">🔊</button>
+  </div>
+  <div id="prompt" class="hidden">E：話す</div>
+  <div id="caption" class="hidden"><div id="cap-title"></div><div id="cap-text"></div></div>
+  <div id="dialog" class="hidden"><div id="dlg-name"></div><div id="dlg-text"></div><div id="dlg-next">▶ E / クリック で次へ</div></div>
+  <div id="toast" class="hidden"></div>
+  <div id="flash"></div>
+  <div id="touch-ui" class="hidden">
+    <div id="joy"><div id="joy-knob"></div></div>
+    <div id="tbtns">
+      <button id="t-talk" class="hidden">話す</button>
+      <button id="t-run">走る</button>
+      <button id="t-jump">ジャンプ</button>
+    </div>
+  </div>
+</div>
+
+<div id="ending" class="hidden">
+  <div class="end-inner">
+    <h2>双山のふもとで</h2>
+    <p id="end-text"></p>
+    <button id="end-btn">探索を続ける</button>
+  </div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
